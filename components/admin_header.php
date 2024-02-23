@@ -53,7 +53,7 @@
   ?>
 
     <div class="profile">
-        <img src="../uploaded_files/<?= $fetch_profile['image']; ?>" class="logo-img">
+        <img src="../uploaded_files/<?= $fetch_profile['image']; ?>" class="logo-img" >
         <p><?= $fetch_profile['name']; ?></p>
     </div>
 

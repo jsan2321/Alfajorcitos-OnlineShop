@@ -31,7 +31,7 @@
     $rename = unique_id().'.'.$ext;
     $image_size = $_FILES['image']['size'];
     $image_tmp_name = $_FILES['image']['tmp_name'];
-    $image_folder = '../uploaded_files'.$rename;
+    $image_folder = '../uploaded_files/'.$rename;
 
     $select_seller = $conn->prepare("SELECT * FROM `sellers` WHERE email=?");
     $select_seller->execute([$email]);

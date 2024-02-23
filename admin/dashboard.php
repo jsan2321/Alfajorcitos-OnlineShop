@@ -4,6 +4,13 @@ error_reporting(E_ALL); // reports and logs all errors
 ini_set('display_errors', '1'); //  display the errors directly on the web page
 include '../components/connect.php';
 
+if (isset($_COOKIE['seller_id'])) {
+  $seller_id = $_COOKIE['seller_id'];
+} else {
+  $seller_id = '';
+  header('location:login.php');
+}
+
 ?>
 
 <!DOCTYPE html>

@@ -250,7 +250,7 @@ header .right{
 .sidebar{
     background-color: var(--white-alfa-25);
     backdrop-filter: var(--backdrop-filter);
-    padding-top: 2rem;
+    padding-top: 0rem;
     width: 20rem;
     height: 100vh;
     top: 0;
@@ -276,15 +276,17 @@ header .right{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: c;
+    justify-content: center;
 }
 .sidebar .profile{
-    margin-top: 2.5rem;
+    margin-top: 1.5rem;
 }
 .logo-img{
     border-radius: 50%;
     padding: .5rem;
     border: 2px solid var(--main-color);
+    width: 150px;
+    height: 150px;
 }
 .sidebar .profile p{
     margin-top: .5rem;
