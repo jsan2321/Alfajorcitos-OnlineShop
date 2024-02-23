@@ -1,9 +1,55 @@
 <?php
 
-error_reporting(E_ALL); // reports and logs all errors
-ini_set('display_errors', '1'); //  display the errors directly on the web page
-include '../components/connect.php';
+  error_reporting(E_ALL); // reports and logs all errors
+  ini_set('display_errors', '1'); //  display the errors directly on the web page
+  include '../components/connect.php';
 
+  if(isset($_POST['register'])){
+
+    $id = unique_id();
+    $name = $_POST['name'];
+    //$name = filter_var($name, FILTER_SANITIZE_STRING); // 'FILTER_SANITIZE_STRING' is deprecated.
+    $name = filter_var($name, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    
+    $email = $_POST['email'];
+    //$email = filter_var($email, FILTER_SANITIZE_STRING);
+    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+
+    $pass = sha1($_POST['pass']);
+    $cpass = sha1($_POST['cpass']);
+    /* Password fields should not be sanitized as they are meant to be hashed for security
+    $pass = filter_var($pass, FILTER_SANITIZE_STRING);
+    $cpass = filter_var($cpass, FILTER_SANITIZE_STRING);
+    */ 
+
+    $image = $_FILES['image']['name'];
+    //$image = filter_var($image, FILTER_SANITIZE_STRING);
+    $image = pathinfo($_FILES['image']['name'], PATHINFO_FILENAME);
+    //$image = filter_var($image, FILTER_SANITIZE_STRING); // Sanitize if necessary
+    //$ext = pathinfo($image, PATHINFO_EXTENSION);
+    $ext = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+    $rename = unique_id().'.'.$ext;
+    $image_size = $_FILES['image']['size'];
+    $image_tmp_name = $_FILES['image']['tmp_name'];
+    $image_folder = '../uploaded_files'.$rename;
+
+    $select_seller = $conn->prepare("SELECT * FROM `sellers` WHERE email=?");
+    $select_seller->execute([$email]);
+
+    if ($select_seller->rowCount() > 0) {
+      $warning_msg[] = 'email already exist';
+    }else {
+      if ($pass != $cpass) {
+        $warning_msg[] = 'confirm password nor matched';
+      } else {
+        $insert_seller = $conn->prepare("INSERT INTO `sellers`(id, name, email, password, image) VALUES(?,?,?,?,?)");
+        $insert_seller->execute([$id, $name, $email, $cpass, $rename]);
+        move_uploaded_file($image_tmp_name, $image_folder);
+        $success_msg[] = 'new seller registered! please login now';
+      }
+    }
+  
+  }
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +66,7 @@ include '../components/connect.php';
 
   <body>
     <div class="form-container">
-      <form action="" method="post" accept="multipart/form-data" class="register">
+      <form action="" method="post" enctype="multipart/form-data" class="register">
         <h3>register now</h3>
         <div class="flex">
           <div class="col">
@@ -58,7 +104,7 @@ include '../components/connect.php';
     <!-- custom js link  -->
     <script type="text/javascript" src="../js/admin_scripts.js"></script>
     <!-- alert -->
-    <?php include '../components/alert.php' ?>
+    <?php include '../components/alert.php'; ?>
 
   </body>
 
