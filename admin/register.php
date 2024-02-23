@@ -21,6 +21,7 @@ include '../components/connect.php';
   <body>
     <div class="form-container">
       <form action="" method="post" accept="multipart/form-data" class="register">
+        <h3>register now</h3>
         <div class="flex">
           <div class="col">
             <div class="input-field">
@@ -47,12 +48,10 @@ include '../components/connect.php';
           <p>select profile <span>*</span></p>
           <input type="file" name="image" accept="image/*" required class="box">
         </div>
+        <p class="link">already have an account ? <a href="login.php">login now</a></p>
         <input type="submit" name="register" class="btn" value="register now">
       </form>
     </div>
-
-
-
 
     <!-- sweetalert cdn link -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
