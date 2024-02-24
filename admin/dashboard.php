@@ -26,6 +26,17 @@ if (isset($_COOKIE['seller_id'])) {
   <body>
     <?php include '../components/admin_header.php'?>
 
+    <div class="banner">
+      <div class="detail">
+        <h1>dasboard</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi tenetur aut repudiandae libero dolore, delectus error sit repellendus assumenda possimus vitae unde quis quas sapiente reiciendis earum in dignissimos distinctio.</p>
+        <span><a href="dashboard.php">admin</a><i class="bx bx-right-arrow-alt"></i>dashboard</span>
+
+      </div>
+    </div>
+
+    <?php include '../components/admin_footer.php'?>
+
     <!-- sweetalert cdn link -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- custom js link  -->
