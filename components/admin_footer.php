@@ -6,12 +6,29 @@
             <input type="email" name="enter your mail..." class="box"><br>
             <button class="btn">subscribe</button>
         </div>
-        <div class="icon">
+        <div class="icons">
             <i class='bx bxl-facebook'></i>
             <i class="bx bxl-instagram-alt"></i>
             <i class="bx bxl-linkedin"></i>
             <i class="bx bxl-twitter"></i>
             <i class="bx bxl-pinterest-alt"></i>
         </div>
+    </div>
+</div>
+<div class="client">
+    <div class="img-box">
+        <img src="../image/client.jpg">
+    </div>
+    <div class="img-box">
+        <img src="../image/client0.jpg">
+    </div>
+    <div class="img-box">
+        <img src="../image/client1.jpg">
+    </div>
+    <div class="img-box">
+        <img src="../image/client2.jpg">
+    </div>
+    <div class="img-box">
+        <img src="../image/client.jpg">
     </div>
 </div>
