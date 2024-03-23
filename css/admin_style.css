@@ -143,6 +143,7 @@ section{
 }
 .banner .detail{
     padding-left: 4%;
+    padding-right: 50%;
     line-height: 1.5;
 }
 .banner .detail p{
@@ -281,7 +282,7 @@ header .right{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /*c*/
 }
 .sidebar .profile{
     margin-top: 1.5rem;
@@ -375,7 +376,7 @@ header .right{
 }
 .form-container form{
     background-color: var(--white-alfa-25);
-    border: 2px solidvar(--white-alfa-40);
+    border: 2px solid var(--white-alfa-40);
     backdrop-filter: var(--backdrop-filter);
     box-shadow: var(--box-shadow);
     border-radius: .5rem;
@@ -521,7 +522,8 @@ header .right{
     filter: grayscale(1);
 }
 .client img:hover{
-    filter: grayscale(0);
+    /* filter: grayscale(0); */
+    filter: sepia();
 }
 footer{
     background-image: url(../image/footer.png);
@@ -593,4 +595,102 @@ footer .bottom a{
 footer .content .box img{
     width: 150px;
     height: 80px;
+}
+
+/*dashboard*/
+.dashboard .box-container{
+    grid-template-columns: repeat(auto-fit, 25rem);
+}
+
+.dashboard .box-container .box{
+    text-align: center;
+    padding: 1.5rem;
+    padding-bottom: 3rem;
+}
+
+.dashboard .box-container .box h3{
+    font-size: 2.7rem;
+}
+
+.dashboard .box-container .box p{
+    padding: 1rem;
+    font-size: 1.8rem;
+    /* margin: 1rem 0; */
+    text-transform: capitalize;
+}
+
+/*seller profile*/
+.seller_profile{
+    background-image: url('../iamge/p.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.seller_profile .detail{
+    background-color: var(--white-alfa-25);
+    border: 2px solid var(--white-alfa-40);
+    backdrop-filter: var(--backdrop-filter);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    border-radius: .5rem;
+    padding: 1rem;
+}
+
+.seller_profile .detail .seller{
+    margin-bottom: 2rem;
+}
+
+.seller_profile .detail .seller img{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: .5rem;
+    padding: .5rem;
+    background-color: var(--main-color);
+}
+
+.seller_profile .detail .seller h3{
+    font-size: 2.5rem;
+    margin: .5rem 0;
+    text-transform: capitalize;
+}
+
+.seller_profile .detail .seller span{
+    font-size: 1.2rem;
+    display: block;
+    color: #666;
+    margin-bottom: .8rem;
+    text-transform: capitalize;
+}
+
+.seller_profile .detail .flex{
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 4rem 0;
+}
+
+.seller_profile .detail .flex .box{
+    flex: 1 1 25rem;
+    border-radius: .5rem;
+    background-color: #ccc3;
+    padding: 2rem;
+}
+
+.seller_profile .detail .flex span{
+    color: var(--main-color);
+    display: block;
+    margin-bottom: .5rem;
+    font-size: 2.5rem;
+    text-transform: capitalize;
+}
+
+.seller_profile .detail .flex p{
+    font-size: 2rem;
+    padding: .5rem 0;
+    margin-bottom: 1rem;
+    text-transform: capitalize;
 }
