@@ -23,7 +23,6 @@
     */ 
 
     $image = $_FILES['image']['name'];
-    //$image = filter_var($image, FILTER_SANITIZE_STRING);
     $image = pathinfo($_FILES['image']['name'], PATHINFO_FILENAME);
     //$image = filter_var($image, FILTER_SANITIZE_STRING); // Sanitize if necessary
     //$ext = pathinfo($image, PATHINFO_EXTENSION);
