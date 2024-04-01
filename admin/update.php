@@ -52,7 +52,8 @@ if (isset($_POST['update'])) {
         $image = $_FILES['image']['name'];
         $image = pathinfo($_FILES['image']['name'], PATHINFO_FILENAME);
         $image = filter_var($image, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        $ext = pathinfo($image, PATHINFO_EXTENSION);
+        // $ext = pathinfo($image, PATHINFO_EXTENSION);
+        $ext = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
         $rename = unique_id().'.'.$ext;
         $image_size = $_FILES['image']['size'];
         $image_tmp_name = $_FILES['image']['tmp_name'];
@@ -105,7 +106,7 @@ if (isset($_POST['update'])) {
       <!-- fetches the Boxicons stylesheet from the CDN (Content Delivery Network). Include and load the Boxicons library to display icons.-->
       <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
       <link rel="stylesheet" type="text/css" href="../css/admin_style.css?v=<?php echo time(); ?>" > <!-- appending a query parameter to the URL, which includes the current timestamp -->
-      <title>Alfajorcitos - alfajores web site vendor update profile page</title>
+      <title>Alfajorcitos - alfajores web site update profile page</title>
   </head>
   <body>
 
