@@ -7,7 +7,7 @@
     list-style: none;
 }
 
-/*----variables----*/
+/* ---------- variables ---------- */
 :root{
     --main-color: #D38C59; 
     --orange-color: #F8D783; /*light orange*/
@@ -19,7 +19,7 @@
     --box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.40);
 }
 
-/*----global setting----*/
+/* ---------- global setting ---------- */
 body{
     background-image: url('../image/body.png'); 
     /* background-color: #FFFCF5; Pale Yelow */
@@ -169,7 +169,7 @@ section{
     text-transform: capitalize;
 }
 
-/*----custom scrollbar----*/
+/* ---------- custom scrollbar ---------- */
 ::-webkit-scrollbar{
     width: 4px;
 }
@@ -190,7 +190,7 @@ section{
     margin: 10px 30px;
 }
 
-/*----header----*/
+/* ---------- header ---------- */
 header{
     position: fixed;
     left: 0;
@@ -253,7 +253,7 @@ header .right{
     margin: 0 .5rem;
 }
 
-/*----sidebar----*/
+/* ---------- sidebar ---------- */
 .sidebar{
     background-color: var(--white-alfa-25);
     backdrop-filter: var(--backdrop-filter);
@@ -357,7 +357,7 @@ header .right{
     border: 2px solid var(--main-color);
 }
 
-/*----form container (register)----*/
+/* ---------- form container (register) ---------- */
 .form-container{
     /* background-image: url('../image/p.png'); */
     background-size: cover;
@@ -465,7 +465,7 @@ header .right{
     height: 100%;
 }
 
-/*----footer section----*/
+/* ---------- footer section ---------- */
 .newsletter{
     width: 100%;
     background-image: url('../image/0.png');
@@ -607,7 +607,7 @@ footer .content .box img{
     height: 80px;
 }
 
-/*dashboard*/
+/* ---------- dashboard ---------- */
 .dashboard .box-container{
     grid-template-columns: repeat(auto-fit, 25rem);
 }
@@ -629,7 +629,7 @@ footer .content .box img{
     text-transform: capitalize;
 }
 
-/*seller profile*/
+/* ---------- seller profile ---------- */
 .seller_profile{
     background-image: url('../iamge/p.png');
     background-size: cover;
@@ -705,7 +705,7 @@ footer .content .box img{
     text-transform: capitalize;
 }
 
-/* view products */
+/* ---------- view products ---------- */
 .show_products{
     /* background-image: url('../image/p.png'); */
     background-position: center;
@@ -797,7 +797,7 @@ footer .content .box img{
     width: 30%;
 }
 
-/*read products*/
+/* ---------- read products ---------- */
 .read_product{
     display: flex;
     flex-direction: column;
@@ -864,3 +864,25 @@ footer .content .box img{
     height: 50px;
     margin-top: .8rem;
 }
+/* ---------- message-container ---------- */
+.message-container .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 50rem); 
+    align-items: center;
+    justify-content: center;
+} 
+
+.message-container .box-container .box{
+    line-height: 2;
+    padding: 2rem;
+    text-align: center;
+}
+
+.message-container .box-container .box h3{
+    text-transform: capitalize;
+}
+
+.message-container .box-container .box h4{
+    text-transform: capitalize;
+}
+

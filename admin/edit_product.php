@@ -11,6 +11,7 @@
     header('location:login.php');
   }
 
+  // update
   if(isset($_POST['update'])){
     $product_id = $_POST['product_id'];
     $product_id = filter_var($product_id, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -109,7 +110,7 @@
             <h1>edit product</h1>
             <img src="../image/separator.png">
         </div>
-        <div class="container">
+        <div class="box-container"> <!--class="container" lo vuelve mas ancho-->
           <?php
             $product_id = $_GET['id'];
             $select_product = $conn->prepare("SELECT * FROM `products` WHERE id = ?");
