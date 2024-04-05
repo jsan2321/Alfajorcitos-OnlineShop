@@ -1,18 +1,25 @@
 <?php
 
-error_reporting(E_ALL); // reports and logs all errors
-ini_set('display_errors', '1'); //  display the errors directly on the web page
-include '../components/connect.php';
+  error_reporting(E_ALL); // reports and logs all errors
+  ini_set('display_errors', '1'); //  display the errors directly on the web page
+  include '../components/connect.php';
 
-if (isset($_COOKIE['seller_id'])) {
-  $seller_id = $_COOKIE['seller_id'];
-} else {
-  $seller_id = '';
-  header('location:login.php');
-}
+  if (isset($_COOKIE['seller_id'])) {
+    $seller_id = $_COOKIE['seller_id'];
+  } else {
+    $seller_id = '';
+    header('location:login.php');
+  }
 
+  if(isset($_POST['delete'])) {
+    $p_id = $_POST['product_id'];
+    $p_id = filter_var($p_id, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
+    $delete_product = $conn->prepare("DELETE FROM `products` WHERE id=?");
+    $delete_product->execute([$p_id]);
 
+    $success_msg[] = 'product deleted successfully';
+  }
 ?>
 
 <!DOCTYPE html>
@@ -49,9 +56,8 @@ if (isset($_COOKIE['seller_id'])) {
 
                 if($select_products->rowCount() > 0){
                     while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)) {
-                    
-                    
             ?>
+            
             <form action="" method="post" class="box">
                 <input type="hidden" name="product_id" value="<?= $fetch_products['id']; ?>">
                 <?php if($fetch_products['image'] != ''){ ?>
@@ -65,7 +71,7 @@ if (isset($_COOKIE['seller_id'])) {
                   <div class="flex-btn">
                     <a href="edit_product.php?id=<?= $fetch_products['id']; ?>" class="btn" >edit</a>
                     <button type="submit" name="delete" class="btn" onclick="confirm('delete this product');" >delete</button>
-                    <a href="view_product.php?post_id=<?= $fetch_products['id']; ?>" class="btn" >view product</a>
+                    <a href="read_product.php?post_id=<?= $fetch_products['id']; ?>" class="btn" >view product</a>
                   </div>
                 </div>
             </form>
@@ -74,7 +80,7 @@ if (isset($_COOKIE['seller_id'])) {
                 }else{
                   echo '
                     <div class="empty" >
-                      <p>no products addede yet! <br> <a href="add_product.php" class="btn" style="margin-top: 1rem;" >add product</a> </p>
+                      <p>no products added yet! <br> <a href="add_product.php" class="btn" style="margin-top: 1rem;" >add product</a> </p>
                     </div>
                   ';
                 }
