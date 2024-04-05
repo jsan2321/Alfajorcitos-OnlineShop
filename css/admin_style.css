@@ -393,7 +393,7 @@ header .right{
 .form-container .register .img-box{
     text-align: center;
 }
-.form-container .register img{
+.form-container .register .img-box img{
     width: 180px;
     height: 180px;
     border-radius: 50%;
@@ -458,6 +458,11 @@ header .right{
 }
 .form-container .image{
     height: 30rem;
+}
+
+.post-editor .image{
+    width: 100%;
+    height: 100%;
 }
 
 /*----footer section----*/

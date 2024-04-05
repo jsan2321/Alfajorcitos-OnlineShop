@@ -17,9 +17,9 @@
     $p_id = $_POST['product_id'];
     $p_id = filter_var($p_id, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-    $delete_iamge = $conn->prepare("SELECT * FROM `products` WHERE id = ?");
-    $delete_iamge->execute(([$p_id]));
-    $fetch_delete_image = $delete_iamge->fetch(PDO::FETCH_ASSOC);
+    $delete_image = $conn->prepare("SELECT * FROM `products` WHERE id = ?");
+    $delete_image->execute(([$p_id]));
+    $fetch_delete_image = $delete_image->fetch(PDO::FETCH_ASSOC);
 
     if($fetch_delete_image[''] != ''){
       unlink('../uploaded_files/'.$fetch_delete_image['image']);
