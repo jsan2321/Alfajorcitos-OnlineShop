@@ -886,3 +886,33 @@ footer .content .box img{
     text-transform: capitalize;
 }
 
+.order-container .box-container{
+    /* display: grid; */
+    grid-template-columns: repeat(auto-fit, 50rem); 
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.order-container .box-container .box{
+    padding: 1rem;
+    position: relative;
+}
+
+.order-container .box-container .box .status{
+    width: 150px;
+    text-transform: uppercase;
+    background-color: var(--box-shadow);
+    padding: .5rem 1rem;
+}
+
+.order-container .box-container .box .detail{
+    margin-top: 3rem;
+    line-height: 2;
+    color: #666;
+    text-transform: capitalize;
+}
+
+.order-container .box-container .box span{
+    text-transform: none;
+}
+
