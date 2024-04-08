@@ -23,4 +23,3 @@
             echo '<script> Swal.fire("'.$error.'", "", "error"); </script>';
         }
     }
-?>
