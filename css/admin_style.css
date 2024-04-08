@@ -538,8 +538,9 @@ header .right{
 footer{
     background-image: url(../image/footer.png);
     background-size: cover;
+    background-position: bottom;
     /* padding: 259px 0 0; */
-    width: 100%;
+    /* width: 100%; */
 }
 footer .content{
     display: grid;
@@ -950,4 +951,11 @@ footer .content .box img{
 .user-container .box-container .box img{
     width: 100%;
     height: 30rem;
+}
+
+@media (max-width:1205px){
+    footer { 
+        background-size: auto;
+        background-repeat: no-repeat; 
+    }
 }
