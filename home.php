@@ -302,6 +302,7 @@
         <img src="image/separator.png" >
       </div>
     </div>
+    <?php include 'components/shop.php'; ?>
     <!-- product section end -->
 
     <!-- offer-2 section starts -->
