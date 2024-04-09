@@ -157,8 +157,8 @@
         </div>
         <div class="box">
           <div class="heading">
-            <span>why choose us</span>
-            <h1>why alfajorcitos</h1>
+            <span>our story</span>
+            <h1>discover alfajorcitos</h1>
             <img src="image/separator.png" >
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam rem, provident aliquid consectetur quas tempore soluta quo dolor nam aperiam fuga, assumenda molestiae eaque quibusdam, totam eum doloremque dicta. Ea!</p>
             <a href="about-us.php" class="btn" >know more</a>
@@ -197,7 +197,7 @@
           <img src="image/features2.avif" >
           <div class="detail">
             <span>healthier choices</span>
-            <h1>gluten-free alfajores</h1>
+            <h1>gluten-free bliss</h1>
             <a href="shop.php" class="btn" >shop now</a>
           </div>
         </div>
@@ -205,7 +205,7 @@
           <img src="image/features0.jpg" >
           <div class="detail">
             <span>regional delights</span>
-            <h1>patagonia chocolate alfajores</h1>
+            <h1>from patagonia</h1>
             <a href="shop.php" class="btn" >shop now</a>
           </div>
         </div>
@@ -229,6 +229,143 @@
       </div>
     </div>
     <!-- sub-banner section end -->
+
+    <!-- offer section starts -->
+    <div class="offer">
+      <div class="heading">
+        <span>fresh from the kitchen</span>
+        <h1>buy any alfajor and get free coffee</h1>
+        <img src="image/separator.png" >
+      </div>
+      <div class="box-container">
+        <div class="box">
+          <div class="detail">
+            <h1>dulce de leche</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In iure sequi neque iusto mollitia, nostrum quaerat explicabo.</p>
+            <a href="shop.php" class="btn" >shop now</a>
+          </div>
+          <img src="image/categories.avif" >
+        </div>
+        <div class="box">
+          <div class="detail">
+            <h1>classic chocolate</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In iure sequi neque iusto mollitia, nostrum quaerat explicabo.</p>
+            <a href="shop.php" class="btn" >shop now</a>
+          </div>
+          <img src="image/categories.jpg" >
+        </div>
+        <div class="box">
+          <div class="detail">
+            <h1>almond</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In iure sequi neque iusto mollitia, nostrum quaerat explicabo.</p>
+            <a href="shop.php" class="btn" >shop now</a>
+          </div>
+          <img src="image/categories2.jpg" >
+        </div>
+        <div class="box">
+          <div class="detail">
+            <h1>caramel crunch</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In iure sequi neque iusto mollitia, nostrum quaerat explicabo.</p>
+            <a href="shop.php" class="btn" >shop now</a>
+          </div>
+          <img src="image/categories1.avif" >
+        </div>
+      </div>
+    </div>
+    <!-- offer section ends -->
+
+
+    <!-- offer-1 section starts -->
+    <div class="offer-1">
+      <div class="detail">
+        <h1>exclusive discount on all <br> alfajores! </h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sunt sit ullam, voluptas id tempore quo fugit rerum deleniti! Earum beatae dolore, sed nam alias quia ex illum laborum quo.</p>
+        <div class="container">
+          <div class="countdown" style="color:#fff;" >
+            <ul>
+              <li><span id="days" ></span>days</li>
+              <li><span id="hours" ></span>hours</li>
+              <li><span id="minutes" ></span>minutes</li>
+              <li><span id="seconds" ></span>seconds</li>
+            </ul>
+          </div>
+        </div>
+        <a href="shop.php" class="btn" >buy now</a>
+      </div>
+    </div>
+    <!-- offer-1 section ends -->
+
+    <!-- product section start -->
+    <div class="products">
+      <div class="heading">
+        <h1>our lastest products</h1>
+        <img src="image/separator.png" >
+      </div>
+    </div>
+    <!-- product section end -->
+
+    <!-- offer-2 section starts -->
+    <div class="offer-2">
+      <div class="detail">
+        <h1>We Pride Ourselves On Making Alfajores <br> With Passion And Tradition </h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis tenetur, alias, quisquam neque amet eveniet unde placeat autem illum ipsam similique beatae delectus consequatur et error ad, soluta animi porro.</p>
+        <a href="shop.php" class="btn" >shop now</a>
+      </div>
+    </div>
+    <!-- offer-2 section ends-->
+
+    <div class="guarantee">
+      <div class="heading">
+        <h1>our guarantee</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis et at asperiores illo? Ullam maxime officia doloribus, consectetur vitae molestiae at quos, aliquam deleniti ab ipsum, harum odit blanditiis facere?</p>
+        <img src="image/separator.png" >
+      </div>
+      <div class="box-container">
+        <div class="box">
+          <img src="image/service0.jpg" >
+          <div class="detail">
+            <h1>events</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem provident quam consectetur maiores animi, eum enim recusandae ducimus necessitatibus veniam, possimus officia excepturi porro dolorem vero minus. Animi, error voluptate.</p>
+          </div>
+        </div>
+        <div class="box">
+          <img src="image/service.avif" style="height: 18rem;" >
+          <div class="detail">
+            <h1>delivery</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem provident quam consectetur maiores animi, eum enim recusandae ducimus necessitatibus veniam, possimus officia excepturi porro dolorem vero minus. Animi, error voluptate.</p>
+          </div>
+        </div>
+        <div class="box">
+          <img src="image/service3.avif" >
+          <div class="detail">
+            <h1>gift baskets</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem provident quam consectetur maiores animi, eum enim recusandae ducimus necessitatibus veniam, possimus officia excepturi porro dolorem vero minus. Animi, error voluptate.</p>
+          </div>
+        </div>
+        <div class="box">
+          <img src="image/service1.avif" >
+          <div class="detail">
+            <h1>artisanals</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem provident quam consectetur maiores animi, eum enim recusandae ducimus necessitatibus veniam, possimus officia excepturi porro dolorem vero minus. Animi, error voluptate.</p>
+          </div>
+        </div>
+        <div class="box">
+          <img src="image/service.jpg" >
+          <div class="detail">
+            <h1>loyalty points</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem provident quam consectetur maiores animi, eum enim recusandae ducimus necessitatibus veniam, possimus officia excepturi porro dolorem vero minus. Animi, error voluptate.</p>
+          </div>
+        </div>
+        <div class="box">
+          <img src="image/service2.jpg" >
+          <div class="detail">
+            <h1>health conscious</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem provident quam consectetur maiores animi, eum enim recusandae ducimus necessitatibus veniam, possimus officia excepturi porro dolorem vero minus. Animi, error voluptate.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <?php include 'components/user_footer.php'; ?>
     <!-- sweetalert cdn link -->

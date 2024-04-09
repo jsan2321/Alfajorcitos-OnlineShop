@@ -893,6 +893,184 @@ footer .content .box img{
     transition: .5s;
 }
 
+.offer{
+    padding: 4% 1%;
+}
+
+.offer .box-container{
+    padding-top: 4%;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+
+.offer .box-container .box{
+    position: relative;
+    margin-bottom: 4rem;
+    border-bottom: 5px solid var(--main-color);
+    box-shadow: var(--box-shadow);
+}
+
+.offer .box-container .box .detail{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #fff6;
+    height: 5rem;
+    padding: 1rem 0;
+    transition: .7s ease;
+    overflow: hidden;
+    padding-bottom: 1rem;
+}
+
+.offer .box-container .box:hover .detail{
+    height: 14rem;
+}
+
+.offer .box-container .box .detail h1{
+    font-size: 1.8rem;
+    text-transform: capitalize;
+    color: var(--main-color);
+    padding: 1rem 0;
+}
+
+.offer .box-container .box img{
+    width: 100%;
+    transition: .5s;
+}
+
+.offer-1{
+    background-image: url('../image/timer.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    padding: 5%;
+}
+
+.offer-1 .detail{
+    max-width: 50vw;
+}
+
+.offer-1 .detail h1{
+    font-weight: bold;
+    color: var(--main-color);
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+
+.offer-1 .detail p{
+    line-height: 1.5;
+    font-size: 18px;
+    color: #555;
+}
+
+.offer-1 .container{
+    color: #333;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.offer-1 h1{
+    font-weight: bold;
+    letter-spacing: .125rem;
+    text-transform: uppercase;
+}
+
+.offer-1 li{
+    display: inline-block;
+    font-size: 1.5rem;
+    padding: 1rem;
+    text-transform: uppercase;
+}
+
+.offer-1 span{
+    display: block;
+    font-size: 4.5rem;
+}
+
+.offer-2{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url('../image/img1.jpg');
+    background-position: center;
+    min-height: 100vh;
+    padding-left: 5%;
+}
+
+.offer-2 .detail{
+    max-width: 40vw;
+    text-align: center;
+}
+
+.offer-2 .detail p{
+    color: #666;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.guarantee{
+    background-image: url('../image/bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 4%;
+    position: relative;
+}
+
+.guarantee .box-container{
+    grid-template-columns: repeat(auto-fit , minmax(25rem, 1fr));
+    /* grid-template-columns: repeat(auto-fit , 30rem); */
+}
+
+.guarantee .box{
+    margin: 1rem;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    position: relative;
+}
+
+.guarantee .box:hover .detail{
+    height: 12rem;
+}
+
+.guarantee .box .detail{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5rem;
+    background-color: #fff;
+    padding: 1rem;
+    overflow: hidden;
+    transition: .5s;
+    /* padding-top: 3rem; */
+}
+
+.guarantee .box .detail h1{
+    font-weight: 400;
+    color: var(--main-color);
+    margin: 1rem;
+    text-transform: capitalize;
+}
+
+.guarantee .box .detail p{
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.guarantee .box img{
+    width: 100%;
+}
+
 /* ---------- meadia screen ---------- */
 @media (max-width:991px){
     #menu-btn{
