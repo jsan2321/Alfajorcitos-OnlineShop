@@ -301,8 +301,9 @@
         <h1>our lastest products</h1>
         <img src="image/separator.png" >
       </div>
+      <?php include 'components/shop.php'; ?>
     </div>
-    <?php include 'components/shop.php'; ?>
+    
     <!-- product section end -->
 
     <!-- offer-2 section starts -->
