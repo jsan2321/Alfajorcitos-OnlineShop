@@ -126,7 +126,7 @@ section{
     margin: .5rem;
 }
 .banner{
-    margin-top: 5rem;
+    /* margin-top: 5rem; */
     width: 100%;
     height: 80vh;
     display: flex;
@@ -1193,9 +1193,36 @@ footer .content .box img{
     padding: 0;
     /* margin-top: 1rem; */
     padding-left: 1rem;
+    font-size: 1.4rem;
     box-shadow: var(--box-shadow);
 }
 
+.products .box-container .box .sub-total{
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.products .box-container .box .flex-btn .btn{
+    height: 50%;
+    width: 48%;
+    margin-top: 1rem;
+}
+
+.products .more{
+    margin: 3rem auto;
+    text-align: center;
+}
+
+.products .fa-edit{
+    height: 50px;
+    width: 20%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--main-color);
+    box-shadow: var(--box-shadow);
+    margin-top: 1rem;
+}
 
 /* ---------- meadia screen ---------- */
 @media (max-width:991px){
