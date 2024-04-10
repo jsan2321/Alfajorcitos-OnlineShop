@@ -14,7 +14,7 @@
         <?php }elseif($fetch_products['stock'] == 0){ ?>
             <span class="stock" style="color:red;" >Out Of Stock</span>
         <?php }else{ ?>
-            <span class="stock" style="color:red;" >Hurrey Only <?= $fetch_products['stock']; ?> Left</span>
+            <span class="stock" style="color:red;" >Hurry Only <?= $fetch_products['stock']; ?> Left</span>
         <?php } ?>
         <p class="price" >Price $ <?= $fetch_products['price']; ?>/-</p>
         <div class="content">
@@ -44,4 +44,7 @@
             ';
         }
     ?>
+</div>
+<div class="more">
+    <a href="menu.php" class="btn" >load more</a>
 </div>
