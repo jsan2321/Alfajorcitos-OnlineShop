@@ -10,6 +10,9 @@ if (isset($_COOKIE['user_id'])) {
   $user_id = '';
 }
 
+include 'components/add_wishlist.php';
+include 'components/add_cart.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +23,7 @@ if (isset($_COOKIE['user_id'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- fetches the Boxicons stylesheet from the CDN (Content Delivery Network). Include and load the Boxicons library to display icons.-->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" type="text/css" href="../css/user_style.css?v=<?php echo time(); ?>">
+  <link rel="stylesheet" type="text/css" href="css/user_style.css?v=<?php echo time(); ?>">
   <title>Alfajorcitos - alfajores web site shop page</title>
 </head>
 
@@ -94,7 +97,7 @@ if (isset($_COOKIE['user_id'])) {
   <!-- sweetalert cdn link -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- custom js link  -->
-  <!-- <script type="text/javascript" src="../js/user_script.js"></script> -->
+  <script type="text/javascript" src="js/user_script.js"></script>
   <!-- alert -->
   <?php include 'components/alert.php'; ?>
 </body>
