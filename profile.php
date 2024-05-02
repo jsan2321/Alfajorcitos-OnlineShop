@@ -81,7 +81,7 @@
   <!-- sweetalert cdn link -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- custom js link  -->
-  <!-- <script type="text/javascript" src="js/user_script.js"></script> -->
+  <script type="text/javascript" src="js/user_script.js"></script>
   <!-- alert -->
   <?php include 'components/alert.php'; ?>
 
