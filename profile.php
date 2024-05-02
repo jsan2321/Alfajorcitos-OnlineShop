@@ -8,7 +8,7 @@
     if (isset($_COOKIE['user_id'])) {
         $user_id = $_COOKIE['user_id'];
     } else {
-        $user_id = '';
+        $user_id = 'login.php'; 
     }
 
     $select_orders = $conn->prepare("SELECT * FROM `orders` WHERE user_id = ?");
