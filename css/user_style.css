@@ -1071,6 +1071,113 @@ footer .content .box img{
     width: 100%;
 }
 
+/* ---------- about us section ---------- */
+.who{
+    padding: 5%;
+}
+
+.who .box{
+    line-height: 1.5;
+    text-align: center;
+    position: relative;
+    margin: 1rem;
+}
+
+.who .img-box{
+    position: relative;
+}
+
+.who .img-box .shape{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10rem;
+}
+
+.who .img-box .img{
+    width: 100%;
+    box-shadow: var(--box-shadow);
+}
+
+.who .box p{
+    font-size: 1.3rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.who .flex-btn{
+    justify-content: center;
+}
+
+.use{
+    padding: 0 6%;
+    background-image: url('../image/g.png');
+    background-size: cover;
+}
+
+.use .box-container .box h1{
+    color: var(--main-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.use .box-container .box p{
+    line-height: 1.5;
+    text-align: center;
+}
+
+.use .box-container .box .icon{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.use .box-container .box .icon .icon-detail{
+    display: flex;
+    align-items: center;
+    background-color: var(--white-alfa-25);
+    border: 2px solid var(--white-alfa-40);
+    backdrop-filter: var(--backdrop-filter);
+    box-shadow: var(--box-shadow);
+    padding: 1rem;
+    border-radius: .5rem;
+}
+
+.use .box-container .box .img{
+    width: 90%;
+    background-image: url('../image/mask.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: -1.1rem;
+}
+
+.use .box-container .box .icon .img-box{
+    width: 60px;
+    height: 60px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    padding: .5rem;
+}
+
+.use .box-container .box .icon .img-box img{
+    width: 100%;
+    object-fit: contain;
+    margin-right: 1rem;
+}
+
+.use .box-container .box .icon .icon-detail p{
+    margin-left: 1rem;
+    text-transform: capitalize;
+    font-size: 1.3rem;
+}
+
+.use .flex-btn{
+    margin-top: 3rem;
+}
+
 /* ---------- product section ---------- */
 .products{
     /* background-image: url('../image/bg1.png'); */
