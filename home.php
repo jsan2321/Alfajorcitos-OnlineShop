@@ -283,8 +283,8 @@
       <div class="detail">
         <h1>exclusive discount on all <br> alfajores! </h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sunt sit ullam, voluptas id tempore quo fugit rerum deleniti! Earum beatae dolore, sed nam alias quia ex illum laborum quo.</p>
-        <div class="container">
-          <div class="countdown" style="color:#fff;" >
+        <div class="container"  id="timer-section"> <!--adding id to fix Uncaught TypeError due to timer scope in user_script.js-->
+          <div class="countdown" style="color:#fff;" > 
             <ul>
               <li><span id="days" ></span>days</li>
               <li><span id="hours" ></span>hours</li>
