@@ -303,6 +303,16 @@ if (isset($_COOKIE['user_id'])) {
             </div>
         </div>
     </div>
+    <div class="about-banner">
+        <div class="box-container">
+            <div class="box">
+                <img src="image/about-banner.avif">
+            </div>
+            <div class="box">
+                <img src="image/about-banner.webp">
+            </div>
+        </div>
+    </div>
 
     <?php include 'components/user_footer.php'; ?>
     <!-- sweetalert cdn link -->

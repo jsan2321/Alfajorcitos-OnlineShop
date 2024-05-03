@@ -1455,7 +1455,75 @@ footer .content .box img{
     text-align: center;
 }
 
+.mission{
+    background-image: url('../image/bg1.webp');
+    background-position: center;
+    background-size: cover;
+    padding: 6% 0;
+    padding-left: 4%;
+    position: relative;
+    overflow-x: hidden;
+}
 
+.mission .box-container .box .detail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: .6rem 0;
+}
+
+.mission .box-container .box .detail h2{
+    color: var(--main-color);
+    text-transform: capitalize;
+    margin-bottom: .5rem;
+}
+
+.mission .box-container .box .detail p{
+    color: #666;
+    line-height: 1.5;
+}
+
+.mission .box-container .box .detail .img-box{
+    text-align: center;
+    margin-right: 1rem;
+}
+
+.mission .box-container .box .detail .img-box img{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
+    padding: .5rem;
+}
+
+.mission .box-img{
+    display: flex;
+    gap: 1rem;
+}
+
+.mission .box-img img{
+    width: 50%;
+}
+
+.mission .box-img img{
+    width: 50%;
+}
+
+.mission .box-img .img{
+    margin-bottom: -3rem;
+}
+
+.mission .box-img .img0{
+    margin-top: -3rem;
+}
+
+.about-banner{
+    padding: 5% 0;
+}
+
+.about-banner .box-container img{
+    width: 100%;
+}
 
 /* ---------- product section ---------- */
 .products{
