@@ -1760,6 +1760,53 @@ footer .content .box img{
     font-size: 1.5rem;
 }
 
+.view_page{
+    background-image: url('../image/p.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.view_page .box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 2;
+    background-color: var(--white-alfa-25);
+}
+
+.view_page .box .img-box{
+    flex: 1 1 40rem;
+    padding: 2rem;
+}
+
+.view_page .box .detail{
+    padding: 1rem;
+    flex: 1 1 40rem;
+}
+
+.view_page .box .img-box img{
+    width: 100%;
+}
+
+.view_page .box .product-detail{
+    margin: 1rem 0;
+    color: gray;
+}
+
+.view_page .box .price{
+    font-size: 2rem;
+    color: #000;
+}
+
+.view_page .box .name{
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--main-color);
+    text-transform: capitalize;
+}
+
+
 /* ---------- meadia screen ---------- */
 @media (max-width:991px){
     #menu-btn{

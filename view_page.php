@@ -81,8 +81,22 @@
     <?php
           }
         }
+      } else {
+          echo '    
+            <div class="empty" >
+              <p>no products added yet!</p>
+            </div>
+          ';
       }
     ?>
+  </section>
+  <section class="products">
+    <div class="heading">
+      <h1>similar products</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim a voluptatum minus amet fugiat reprehenderit officia deleniti earum? Quam nisi nesciunt blanditiis iure quasi similique expedita facere dolore suscipit totam.</p>
+      <img src="image/separator.png">
+    </div>
+    <?= include 'components/shop.php'; ?>
   </section>
 
   <?php include 'components/user_footer.php'; ?>
