@@ -1,6 +1,6 @@
 <?php
 
-    if (isset($_POST['add_to_wishlist'])) {
+    if (isset($_POST["add_to_wishlist"])) {
         if ($user_id != '') {
             
             $id = unique_id();
@@ -9,14 +9,15 @@
             $varify_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ? AND product_id = ?");
             $varify_wishlist->execute([$user_id, $product_id]);
 
-            $cart_num = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND product_id = ?");
-            $cart_num->execute([$user_id, $product_id]);
+            //$cart_num = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND product_id = ?");
+            //$cart_num->execute([$user_id, $product_id]);
 
             if ($varify_wishlist->rowCount() > 0) {
-                $warning_msg = 'product already exist in your wishlist';
-            } else if ($cart_num->rowCount() > 0) {
-                $warning_msg = 'product already exist in your cart';
-            } else {
+                $warning_msg[] = 'product already exist in your wishlist';
+            } //else if ($cart_num->rowCount() > 0) {
+                //$warning_msg[] = 'product already exist in your cart';
+            //} 
+            else {
                 $select_price = $conn->prepare("SELECT * FROM `products` WHERE id = ? LIMIT 1");
                 $select_price->execute([$product_id]);
                 $fetch_price = $select_price->fetch(PDO::FETCH_ASSOC);
