@@ -73,7 +73,7 @@
                 <input type="hidden" name="product_id" value="<?= $fetch_products['id'] ?>" >
                 <div class="button">
                   <button type="submit" name="add_to_wishlist" class="btn" >add to wishlist <i class="bx bx-heart" ></i></button>
-                  <input type="hidden" name="qty" min="0" class="quantity" >
+                  <input type="hidden" name="qty" value="1" min="0" class="quantity" > <!-- adding default numeric value in quantity (qty) field so the form can be submitted.-->
                   <button type="submit" name="add_to_cart" class="btn" >add to cart <i class="bx bx-cart" ></i></button>
                 </div>
               </div>
