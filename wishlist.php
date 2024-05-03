@@ -62,9 +62,9 @@
     </div>
 
     <div class="box-container">
-        <?=
+        <?php
         
-            $grand_total = null;
+            $grand_total = 0;
             $select_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id=?");
             $select_wishlist->execute([$user_id]);
 

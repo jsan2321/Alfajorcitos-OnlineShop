@@ -1645,7 +1645,7 @@ footer .content .box img{
     color: var(--main-color);
     border-radius: 0;
     padding: 0;
-    /* margin-top: 1rem; */
+    margin-top: 1rem;
     padding-left: 1rem;
     font-size: 1.4rem;
     box-shadow: var(--box-shadow);
@@ -1661,6 +1661,7 @@ footer .content .box img{
     height: 50%;
     width: 48%;
     margin-top: 1rem;
+    background-color: var(--main-color);
 }
 
 .products .more{
@@ -1668,15 +1669,45 @@ footer .content .box img{
     text-align: center;
 }
 
-.products .fa-edit{
+.products .box-container .fa-edit{
     height: 50px;
     width: 20%;
     cursor: pointer;
     font-size: 1.5rem;
     color: var(--main-color);
-    box-shadow: var(--box-shadow);
     margin-top: 1rem;
+    box-shadow: var(--box-shadow);
 }
+
+.cart-total{
+    text-align: center;
+    padding: 4%;
+    margin: 2rem;
+    box-shadow: var(--box-shadow);
+}
+
+.cart-total p{
+    font-size: 1.4rem;
+    margin: 2rem 0;
+    text-transform: capitalize;
+    color: gray;
+}
+
+.cart-total p span{
+    color: var(--main-color);
+}
+
+.cart-total .button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-total .btn{
+    margin: .5rem;
+}
+
+
 
 .profile{
     padding: 5% 8%;
