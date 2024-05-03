@@ -1,10 +1,13 @@
 <?php
 
+    //session_start();
+    
     if(isset($success_msg)) {
         foreach($success_msg as $success) {
             echo '<script> Swal.fire("'.$success.'", "", "success"); </script>';
         }
     }
+
 
     if(isset($warning_msg)) {
         foreach($warning_msg as $warning) {

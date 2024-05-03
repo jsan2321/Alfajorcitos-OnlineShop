@@ -1,5 +1,7 @@
 <?php
 
+  session_start(); 
+
   error_reporting(E_ALL); // reports and logs all errors
   ini_set('display_errors', '1'); //  display the errors directly on the web page
   include 'components/connect.php';
@@ -29,6 +31,34 @@
     }
   }
 
+  // update quantity
+  if (isset($_POST['update_cart'])) {
+    $cart_id = $_POST['cart_id'];
+    $cart_id = filter_var($cart_id, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+    $qty = $_POST['qty'];
+    $qty = filter_var($qty, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+    $update_qty = $conn->prepare("UPDATE `cart` SET qty = ? WHERE id = ?");
+    $update_qty->execute([$qty, $cart_id]);
+
+    $success_msg[] = 'cart quantity updated';
+    //$_SESSION['success_msg']  = 'cart quantity updated';
+  }
+
+  //empty cart
+  if(isset($_POST['empty_cart'])) {
+    $verify_empty_item = $conn->prepare("SELECT * FROM `cart` WHERE user_id=?");
+    $verify_empty_item->execute([$user_id]);
+
+    if($verify_empty_item->rowCount() > 0) {
+        $delete_cart_item = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
+        $delete_cart_item->execute([$user_id]);
+        $success_msg[] = 'empty cart successfully';
+    } else {
+        $warning_msg[] = 'your cart is already empty';
+    }
+  }
 ?>
 
 <!DOCTYPE html>
@@ -94,7 +124,7 @@
                                         <p class="sub-total">sub total : $<?= $sub_total = ($fetch_cart['qty']*$fetch_cart['price']); ?></p>
                                     </div>
                                     <div class="flex-btn">
-                                        <input type="nuumber" name="qty" required min="1" value="<?= $fetch_cart['qty']; ?>" max="99" maxlength="2" class="qty">
+                                        <input type="number" name="qty" required min="1" value="<?= $fetch_cart['qty']; ?>" max="99" maxlength="2" class="qty">
                                         <button type="submit" name="update_cart" class="bx bxs-edit fa-edit" style="box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.40);" ></button>
                                         <button type="submit" name="delete_item" onclick="return confirm('delete this product');" class="btn" >delete</button>
                                     </div>
