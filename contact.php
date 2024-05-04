@@ -33,7 +33,7 @@ if (isset($_POST['login'])) {
   <!-- fetches the Boxicons stylesheet from the CDN (Content Delivery Network). Include and load the Boxicons library to display icons.-->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" type="text/css" href="css/user_style.css?v=<?php echo time(); ?>"> <!-- appending a query parameter to the URL, which includes the current timestamp -->
-  <title>Alfajorcitos - alfajores web site vendor registration page</title>
+  <title>Alfajorcitos - alfajores web site vendor contact page</title>
 </head>
 
 <body>
@@ -41,28 +41,44 @@ if (isset($_POST['login'])) {
 
   <div class="banner">
     <div class="detail">
-      <h1>register</h1>
+      <h1>contact us</h1>
       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi tenetur aut repudiandae libero dolore, delectus error sit repellendus assumenda possimus vitae unde quis quas sapiente reiciendis earum in dignissimos distinctio.</p>
-      <span><a href="home.php">home</a><i class="bx bx-right-arrow-alt"></i>register</span>
+      <span><a href="home.php">home</a><i class="bx bx-right-arrow-alt"></i>contact us</span>
     </div>
   </div>
 
-  <!-- register form section -->
-  <div class="form-container">
-    <form action="" method="post" enctype="multipart/form-data" class="login">
-      <h3>login now</h3>
-      <div class="input-field">
-        <p>your email <span>*</span></p>
-        <input type="email" name="email" placeholder="enter your email" maxlength="50" required class="box">
-      </div>
-      <div class="input-field">
-        <p>your password <span>*</span></p>
-        <input type="password" name="pass" placeholder="enter your password" maxlength="50" required class="box">
-      </div>
-      <p class="link">do not have an account ? <a href="register.php">register now</a></p>
-      <input type="submit" name="login" class="btn" value="login now">
-    </form>
+  <!-- service section -->
+  <div class="services">
+    <div class="heading">
+        <h1>our services</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt saepe repudiandae, ratione est, in voluptatibus tempora officiis voluptatem doloribus nisi perspiciatis molestiae aliquam possimus id deserunt ad laboriosam veniam ex!</p>
+        <img src="image/separator.png">
+    </div>
+    <div class="box-container">
+        <div class="box">
+            <img src="image/delivery.png" >
+            <div>
+                <h1>free shipping fast</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            </div>
+        </div>
+        <div class="box">
+            <img src="image/return.png" >
+            <div>
+                <h1>money back guarantee</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            </div>
+        </div>
+        <div class="box">
+            <img src="image/discount.png" >
+            <div>
+                <h1>online support 24/7</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            </div>
+        </div>
+    </div>
   </div>
+
 
   <?php include 'components/user_footer.php'; ?>
   <!-- sweetalert cdn link -->
