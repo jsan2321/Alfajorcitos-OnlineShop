@@ -7,10 +7,10 @@ include 'components/connect.php';
 if (isset($_COOKIE['user_id'])) {
     $user_id = $_COOKIE['user_id'];
 } else {
-    $user_id = '';
+    $user_id = 'home.php';
 }
 
-if (isset($_POST['send_message'])) {
+if (isset($_POST['place_order'])) {
 
     if ($user_id != '') {
         $id = unique_id();
@@ -21,24 +21,54 @@ if (isset($_POST['send_message'])) {
         $email = $_POST['email'];
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
 
-        $subject = $_POST['subject'];
-        $subject = filter_var($subject, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $number = $_POST['number'];
+        $number = filter_var($number, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-        $message = $_POST['message'];
-        $message = filter_var($message, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $address = $_POST['flat'].', '.$_POST['street'].', '.$_POST['city'].', '.$_POST['country'].', '.$_POST['pin'];
+        $address = filter_var($address, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-        $verify_message = $conn->prepare("SELECT * FROM `message` WHERE user_id = ? AND name = ? AND email = ? AND subject = ? AND message = ?");
-        $verify_message->execute([$user_id, $name, $email, $subject, $message]);
+        $address_type = $_POST['address_type'];
+        $address_type = filter_var($address_type, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-        if ($verify_message->rowCount() > 0) {
-            $warning_msg[] = 'message already send';
+        $method = $_POST['method'];
+        $method = filter_var($method, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+        $verify_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
+        $verify_cart->execute([$user_id]);
+
+        if(isset($_GET['get_id'])) {
+            $get_product = $conn->prepare("SELECT * FROM `products` WHERE id = ? LIMIT 1");
+            $get_product->execute([$_GET['get_id']]);
+            
+            if($get_product->rowCount() > 0) {
+                while($fetch_p = $get_product->fetch(PDO::FETCH_ASSOC)) {
+                    $seller_id = $fetch_p['seller_id'];
+                    $insert_order = $conn->prepare("INSERT INTO `orders` (id, user_id, seller_id, name, number, email, address, address_type, method, product_id, price, qty) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)");
+                    $insert_order->execute([$id, $user_id, $seller_id, $name, $number, $email, $address, $address_type, $method, $fetch_p['id'], $fetch_p['price'], 1]);
+                    header("location:order.php");
+                }
+            } else {
+                $warning_msg[] = 'something went wrong';
+            }
+        } elseif($verify_cart->rowCount() > 0) {
+            while($f_cart = $verify_cart->fetch(PDO::FETCH_ASSOC)) {
+                $s_products = $conn->prepare("SELECT * FROM `products` WHERE id = ? LIMIT 1");
+                $s_products->execute([$f_cart['product_id']]);
+                $f_product = $s_products->fetch(PDO::FETCH_ASSOC);
+                $seller_id = $f_product['seller_id'];
+
+                $insert_order = $conn->prepare("INSERT INTO `orders` (id, user_id, seller_id, name, number, email, address, address_type, method, product_id, price, qty) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)");
+                $insert_order->execute([$id, $user_id, $seller_id, $name, $number, $email, $address, $address_type, $method, $f_cart['product_id'], $f_cart['price'], $f_cart['qty']]);
+                header("location:order.php");
+            }
+            if($insert_order) {
+                $delete_cart_id = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
+                $delete_cart_id->execute([$user_id]);
+                header('location:order.php');
+            } 
         } else {
-            $insert_message = $conn->prepare("INSERT INTO `message` (id, user_id, name, email, subject, message) VALUES(?,?,?,?,?,?)");
-            $insert_message->execute([$id, $user_id, $name, $email, $subject, $message]);
-            $success_msg[] = 'message send';
+            $warning_msg[] = 'something went wrong';
         }
-    } else {
-        $warning_msg[] = 'please login first';
     }
 }
 ?>
@@ -119,11 +149,11 @@ if (isset($_POST['send_message'])) {
                             </div>
                             <div class="input-field">
                                 <p>city name <span>*</span></p>
-                                <input type="email" name="city" placeholder="enter your city name" maxlength="50" required class="box">
+                                <input type="text" name="city" placeholder="enter your city name" maxlength="50" required class="box">
                             </div>
                             <div class="input-field">
                                 <p>country name <span>*</span></p>
-                                <input type="email" name="country" placeholder="enter your country name" maxlength="50" required class="box">
+                                <input type="text" name="country" placeholder="enter your country name" maxlength="50" required class="box">
                             </div>
                             <div class="input-field">
                                 <p>pincode <span>*</span></p>
