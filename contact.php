@@ -4,24 +4,43 @@ error_reporting(E_ALL); // reports and logs all errors
 ini_set('display_errors', '1'); //  display the errors directly on the web page
 include 'components/connect.php';
 
-if (isset($_POST['login'])) {
-
-  $email = $_POST['email'];
-  $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-
-  $pass = sha1($_POST['pass']);
-
-  $select_user = $conn->prepare("SELECT * FROM `users` WHERE email=? AND password=? LIMIT 1");
-  $select_user->execute([$email, $pass]);
-  $row = $select_user->fetch(PDO::FETCH_ASSOC);
-
-  if ($select_user->rowCount() > 0) {
-    setcookie('user_id', $row['id'], time() + 60 * 60 * 24 * 38, '/');
-    header('location:home.php');
-  } else {
-    $warning_msg[] = 'incorrect email or password!';
-  }
+if (isset($_COOKIE['user_id'])) {
+  $user_id = $_COOKIE['user_id'];
+} else {
+  $user_id = '';
 }
+
+if (isset($_POST['send_message'])) {
+
+  if ($user_id != '') {
+    $id = unique_id(); 
+
+    $name = $_POST['name'];
+    $name = filter_var($name, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+    $email = $_POST['email'];
+    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+
+    $subject = $_POST['subject'];
+    $subject = filter_var($subject, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+    $message = $_POST['message'];
+    $message = filter_var($message, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+    $verify_message = $conn->prepare("SELECT * FROM `message` WHERE user_id = ? AND name = ? AND email = ? AND subject = ? AND message = ?");
+    $verify_message->execute([$user_id, $name, $email, $subject, $message]);
+
+    if ($verify_message->rowCount() > 0) {
+      $warning_msg[] = 'message already send';
+    } else {
+      $insert_message = $conn->prepare("INSERT INTO `message` (id, user_id, name, email, subject, message) VALUES(?,?,?,?,?,?)");
+      $insert_message->execute([$id, $user_id, $name, $email, $subject, $message]);
+      $success_msg[] = 'message send';
+    }
+  } else {
+    $warning_msg[] = 'please login first';
+  }
+} 
 ?>
 
 <!DOCTYPE html>
@@ -48,37 +67,99 @@ if (isset($_POST['login'])) {
   </div>
 
   <!-- service section -->
-  <div class="services">
+  <div class="service">
     <div class="heading">
-        <h1>our services</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt saepe repudiandae, ratione est, in voluptatibus tempora officiis voluptatem doloribus nisi perspiciatis molestiae aliquam possimus id deserunt ad laboriosam veniam ex!</p>
-        <img src="image/separator.png">
+      <h1>our services</h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt saepe repudiandae, ratione est, in voluptatibus tempora officiis voluptatem doloribus nisi perspiciatis molestiae aliquam possimus id deserunt ad laboriosam veniam ex!</p>
+      <img src="image/separator.png">
     </div>
     <div class="box-container">
-        <div class="box">
-            <img src="image/delivery.png" >
-            <div>
-                <h1>free shipping fast</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-            </div>
+      <div class="box">
+        <img src="image/delivery.png">
+        <div>
+          <h1>free shipping fast</h1>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
         </div>
-        <div class="box">
-            <img src="image/return.png" >
-            <div>
-                <h1>money back guarantee</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-            </div>
+      </div>
+      <div class="box">
+        <img src="image/return.png">
+        <div>
+          <h1>money back guarantee</h1>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
         </div>
-        <div class="box">
-            <img src="image/discount.png" >
-            <div>
-                <h1>online support 24/7</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-            </div>
+      </div>
+      <div class="box">
+        <img src="image/discount.png">
+        <div>
+          <h1>online support 24/7</h1>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
         </div>
+      </div>
     </div>
   </div>
 
+  <div class="contact">
+    <div class="heading">
+      <h1>drop a line</h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt saepe repudiandae, ratione est, in voluptatibus tempora officiis voluptatem doloribus nisi perspiciatis molestiae aliquam possimus id deserunt ad laboriosam veniam ex!</p>
+      <img src="image/separator.png">
+    </div>
+    <div class="form-container">
+      <form action="" method="post" enctype="multipart/form-data" class="login">
+        <div class="input-field">
+          <p>your name <span>*</span></p>
+          <input type="text" name="name" placeholder="enter your name" maxlength="50" required class="box">
+        </div>
+        <div class="input-field">
+          <p>your email <span>*</span></p>
+          <input type="email" name="email" placeholder="enter your email" maxlength="50" required class="box">
+        </div>
+        <div class="input-field">
+          <p>subject <span>*</span></p>
+          <input type="text" name="subject" placeholder="enter your name" maxlength="50" required class="box">
+        </div>
+        <div class="input-field">
+          <p>message <span>*</span></p>
+          <textarea name="message" class="box"></textarea>
+        </div>
+        <button type="submit" name="send_message" class="btn">send message</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- contact form section -->
+  <div class="address">
+    <div class="heading">
+      <h1>our contact details</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam iste dignissimos <br> reiciendis exercitationem voluptatem facilis eaque ipsa eveniet expedita aspernatur in consectetur iure eum alias, dolorum dolore, excepturi nulla ullam.</p>
+      <img src="image/separator.png">
+    </div>
+    <div class="box-container">
+      <div class="box">
+        <i class="bx bxs-map-alt" ></i>
+        <div>
+          <h4>address</h4>
+          <p>1093 Marigold Lane, Coral Way <br>Miami, Florida, 33169</p>
+        </div>
+      </div>
+      <div class="box">
+        <i class="bx bxs-phone-incoming" ></i>
+        <div>
+          <h4>phone number</h4>
+          <p>2233445544</p>
+          <p>7788997766</p>
+        </div>
+      </div>
+      <div class="box">
+        <i class="bx bxs-envelope" ></i>
+        <div>
+          <h4>email</h4>
+          <p>selenaansari@gmail.com</p>
+          <p>selenaansari47@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <?php include 'components/user_footer.php'; ?>
   <!-- sweetalert cdn link -->
