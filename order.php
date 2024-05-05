@@ -58,7 +58,7 @@ if (isset($_COOKIE['user_id'])) {
             ?>
                             <div class="box">
                                 <a href="view_order.php?get_id=<?= $fetch_orders['id']; ?>">
-                                    <img src="uploaded_files/<?= $fetch_products['image']; ?>">
+                                    <img src="uploaded_files/<?= $fetch_products['image']; ?>" class="image" >
                                     <div class="content">
                                         <p class="date"><i class="bx bxs-calendar-alt"></i><span><?= $fetch_orders['date_time']; ?></span></p>
                                         <div class="row">
@@ -84,7 +84,7 @@ if (isset($_COOKIE['user_id'])) {
                 echo '
                 
                     <div class="empty">
-                        <p>no products added yet!</p>
+                        <p>no order placed yet!</p>
                     </div>
                 
                 ';
