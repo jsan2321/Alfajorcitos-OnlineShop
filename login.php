@@ -4,6 +4,12 @@ error_reporting(E_ALL); // reports and logs all errors
 ini_set('display_errors', '1'); //  display the errors directly on the web page
 include 'components/connect.php';
 
+if (isset($_COOKIE['user_id'])) {
+  $user_id = $_COOKIE['user_id'];
+} else {
+  $user_id = '';
+}
+
 if (isset($_POST['login'])) {
 
   $email = $_POST['email'];
