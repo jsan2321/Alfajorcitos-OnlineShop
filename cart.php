@@ -162,7 +162,7 @@
                 <div class="button">
                     <form method="post">
                         <button type="submit" name="empty_cart" onclick="return confirm('are you sure to empty cart');" class="btn" >empty cart</button>
-                        <a href="cheackout.php" class="btn" >proceed to checkout</a>
+                        <a href="checkout.php" class="btn" >proceed to checkout</a>
                     </form>
                 </div>
             </div>
